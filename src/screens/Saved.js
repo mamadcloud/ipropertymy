@@ -6,20 +6,16 @@ import {
   FlatList,
   Image,
   Dimensions,
-  Text,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import Text from '../components/texts';
+import { MaterialCommunityIcons, FontAwesome5, } from '../components/icons';
 
 const { width, height } = Dimensions.get("window");
 const thumbnailWidth = width * .3;
 const thumhnailHeight = thumbnailWidth * .85;
 
 const styles = {
-  font:{
-    fontFamily: "Museo Sans",
-    fontSize: 15,
-    fontWeight: "300"
-  },
   activeText: {
     color: "#2B81C6",
   },
@@ -150,12 +146,56 @@ const ListingBox = ({ item, }) => {
       />
       <View
         style={{
-          padding: 10,    
+          paddingTop: 10,  
+          paddingHorizontal: 10,   
+          flex: 1, 
         }}
       >
-        <Text
-          style={[styles.font,]}
-        >{`RM ${numberWithCommas(item.prices[0].max)}`}</Text>
+        <Text>{`RM ${numberWithCommas(item.prices[0].max)}`}</Text>
+        <Text style={{ fontWeight: "500" }} numberOfLines={1} ellipsizeMode={'tail'}>{item.title}</Text>
+        <Text style={styles.inactiveText} numberOfLines={1} ellipsizeMode={'tail'}>{item.propertyType}</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            flex: 1,
+            alignItems: "flex-end",
+          }}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            flex: 1,
+            alignItems: "flex-end",
+          }}
+        >
+          {
+              [{ label: "bedroom", icon: "bed", }, { label: "bathroom", icon: "bath", }, { label: "carPark", icon: "car", }].map(i => (
+                item.attributes[i.label] && <View style={{
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  paddingRight: 10,
+                }}>
+                  <View
+                    style={{
+                      backgroundColor: "#efefef",
+                      padding: 5,
+                      marginRight: 5,
+                      borderRadius: 15,
+                    }}
+                  >
+                    <FontAwesome5 
+                      name={i.icon} 
+                      style={{ fontSize: 15, color: "#A6A6A6",   }} 
+                    />
+                  </View>
+                  <Text>{item.attributes[i.label]}</Text>
+                </View>
+              ))
+            }
+          </View>
+          <MaterialCommunityIcons name='star' style={{ fontSize: 25, color: "#F6B042", }} />
+        </View>
       </View>
     </View>
   );

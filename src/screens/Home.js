@@ -2,7 +2,6 @@ import React, { useState} from 'react';
 import { 
   StatusBar,
   View, 
-  Text,
   TouchableOpacity,
   TouchableWithoutFeedback,
   Image,
@@ -13,15 +12,11 @@ import {
 import { useFocusEffect } from '@react-navigation/native';
 import { useSafeArea } from 'react-native-safe-area-context';
 import { SimpleLineIcons } from '../components/icons';
+import Text from '../components/texts';
 
 const { width, height } = Dimensions.get("window");
 
 const styles = {
-  font:{
-    fontFamily: "Museo Sans",
-    fontSize: 15,
-    fontWeight: "300"
-  },
   activeText: {
     color: "#2B81C6",
   },
@@ -134,7 +129,7 @@ const SearchBox = () => {
               }}
             >
               <Text
-                style={[styles.font, channel === CHANNELS.SALE ? styles.activeText : styles.inactiveText]}
+                style={[channel === CHANNELS.SALE ? styles.activeText : styles.inactiveText]}
               >{'BUY'}</Text>
             </View>
           </TouchableWithoutFeedback>
@@ -151,7 +146,7 @@ const SearchBox = () => {
               }}
             >
               <Text
-                style={[styles.font, channel === CHANNELS.RENT ? styles.activeText : styles.inactiveText]}
+                style={[channel === CHANNELS.RENT ? styles.activeText : styles.inactiveText]}
               >{'RENT'}</Text>
             </View>
           </TouchableWithoutFeedback>
@@ -164,9 +159,9 @@ const SearchBox = () => {
               flexDirection: "row",
             }}
           >
-            <SimpleLineIcons name="magnifier" style={[styles.font, styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
+            <SimpleLineIcons name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
             <Text
-              style={[styles.font, styles.inactiveText, { paddingLeft: 5, }]}
+              style={[styles.inactiveText, { paddingLeft: 5, }]}
             >{'Search for properties'}</Text>
           </TouchableOpacity>
       </View>
@@ -205,7 +200,6 @@ const Articles = (props) => {
       >
         <Text
           style={[
-            styles.font,
             { fontWeight: "500", }
           ]}
         >{item.title}</Text>
@@ -247,7 +241,6 @@ const Articles = (props) => {
           numberOfLines={3} 
           ellipsizeMode ={'tail'}
           style={[
-            styles.font,
             { 
               fontWeight: "500", 
             }
@@ -275,11 +268,11 @@ const Articles = (props) => {
         }}
       >
         <Text
-          style={[styles.font, { fontWeight: "500", }]}
+          style={[{ fontWeight: "500", }]}
         >{section}</Text>
         <TouchableWithoutFeedback>
           <Text
-            style={[styles.font, styles.activeText, { fontWeight: "500", }]}
+            style={[styles.activeText, { fontWeight: "500", }]}
           >{'MORE'}</Text>
         </TouchableWithoutFeedback>
       </View>
