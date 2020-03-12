@@ -1,0 +1,320 @@
+[
+  {
+		"channels": ["sale"],
+		"kind": "property",
+		"id": "sale-6820470",
+		"shareLink": "https://www.iproperty.com.my/property/arcoris-soho-mont-kiara-premium-6820470",
+		"title": "Arcoris Soho, Mont Kiara",
+		"active": true,
+		"tier": 3,
+		"propertyType": "Serviced Residence",
+		"prices": [{
+			"type": "sale",
+			"currency": "MYR",
+			"max": 750000,
+			"min": 750000
+		}],
+		"cover": {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg"
+		},
+		"medias": [{
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/254507b01fe64f699dd32c6bad583d7d.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/254507b01fe64f699dd32c6bad583d7d.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/254507b01fe64f699dd32c6bad583d7d.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/c56ddc9ceb89455888b3b6cc869fa25c.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/c56ddc9ceb89455888b3b6cc869fa25c.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/c56ddc9ceb89455888b3b6cc869fa25c.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/2126c12819754e8f940997184576a257.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/2126c12819754e8f940997184576a257.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/2126c12819754e8f940997184576a257.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/b1968959446b49f09ca94e6be89e9f32.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/b1968959446b49f09ca94e6be89e9f32.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/b1968959446b49f09ca94e6be89e9f32.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/34543/f0b0239a15444c9eb499bca44ab80410.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/34543/f0b0239a15444c9eb499bca44ab80410.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/f0b0239a15444c9eb499bca44ab80410.jpg"
+		}],
+		"updatedAt": "2019-05-09T09:45:00.000Z",
+		"publishedAt": "2019-05-09T09:45:14+00:00",
+		"address": {
+			"formattedAddress": "Jalan Kiara 4",
+			"lat": 3.166783,
+			"lng": 101.651499
+		},
+		"multilanguagePlace": {
+			"en-GB": {
+				"level1": "Kuala Lumpur",
+				"level2": "Mont Kiara",
+				"level3": "Arcoris Soho"
+			}
+		},
+		"referenceCode": "UP6820470",
+		"attributes": {
+			"bathroom": "1",
+			"bedroom": "1",
+			"carPark": "1",
+			"builtUp": "700",
+			"landTitleType": "Residential",
+			"tenure": "Freehold",
+			"unitType": "SOHO",
+			"sizeUnit": "SQUARE_FEET"
+		},
+		"listers": [{
+			"id": "34543",
+			"type": "agent",
+			"name": "Kira Chow",
+			"contact": {
+				"phones": [{
+					"label": "Mobile",
+					"number": "+60122885564"
+				}]
+			}
+		}],
+		"organisations": [{
+			"id": "1801",
+			"type": "agency",
+			"name": "Private Advertiser"
+		}]
+	}, {
+		"channels": ["sale"],
+		"kind": "property",
+		"id": "sale-6674935",
+		"shareLink": "https://www.iproperty.com.my/property/1-sty-terrace-link-house-taman-tun-dr-ismail-premium-6674935",
+		"title": "Burhanuddin Helmi, Ttdi, Kl, Kuala Lumpur, Taman Tun Dr Ismail",
+		"active": true,
+		"tier": 3,
+		"propertyType": "1-sty Terrace/Link House",
+		"prices": [{
+			"type": "sale",
+			"currency": "MYR",
+			"max": 1030000,
+			"min": 1030000
+		}],
+		"cover": {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg"
+		},
+		"medias": [{
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/4e1e16173baf4d0dab0526e94a0f05ae.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/4e1e16173baf4d0dab0526e94a0f05ae.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/4e1e16173baf4d0dab0526e94a0f05ae.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/39249738dc5748618ea4f4e42976c661.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/39249738dc5748618ea4f4e42976c661.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/39249738dc5748618ea4f4e42976c661.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/3f5c7fd35e604fc184217a41db53b7fb.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/3f5c7fd35e604fc184217a41db53b7fb.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/3f5c7fd35e604fc184217a41db53b7fb.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b6834421a7d94d26a4b0cbf5ea072f05.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b6834421a7d94d26a4b0cbf5ea072f05.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/b6834421a7d94d26a4b0cbf5ea072f05.jpg"
+		}],
+		"updatedAt": "2019-05-09T09:40:00.000Z",
+		"publishedAt": "2018-08-24T08:35:49+00:00",
+		"multilanguagePlace": {
+			"en-GB": {
+				"level1": "Kuala Lumpur",
+				"level2": "Taman Tun Dr Ismail"
+			}
+		},
+		"referenceCode": "UP6674935",
+		"attributes": {
+			"landArea": "24x80",
+			"bathroom": "2",
+			"bedroom": "3",
+			"carPark": "2",
+			"builtUp": "1,500",
+			"landTitleType": "Residential",
+			"furnishing": "Partly Furnished",
+			"tenure": "Freehold",
+			"unitType": "Intermediate",
+			"sizeUnit": "SQUARE_FEET"
+		},
+		"listers": [{
+			"id": "32434",
+			"type": "agent",
+			"name": "Mac Chia",
+			"license": "REN 22940",
+			"image": {
+				"type": "image",
+				"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/agent/4f61478e9ce84dd2820f985f3e6eac57.jpg",
+				"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/agent/4f61478e9ce84dd2820f985f3e6eac57.jpg"
+			},
+			"website": "https://www.iproperty.com.my/realestateagent/32434/Mac_Chia",
+			"contact": {
+				"phones": [{
+					"label": "Mobile",
+					"number": "+60182886616"
+				}]
+			}
+		}],
+		"organisations": [{
+			"id": "1849",
+			"type": "agency",
+			"name": "KLCT International Realty Sdn. Bhd. (Sri Hartamas)",
+			"color": "#3cb6ab",
+			"logo": {
+				"type": "image",
+				"url": "https://images-my.ippstatic.com/images/searchresult/agencybrandlogo/24236cd0f5b44d368a86cb3ae7c653e2.png",
+				"thumbnailUrl": "https://images-my.ippstatic.com/images/searchresult/agencybrandlogo/24236cd0f5b44d368a86cb3ae7c653e2.png"
+			}
+		}]
+	}, {
+		"channels": ["sale"],
+		"kind": "property",
+		"id": "sale-7463177",
+		"shareLink": "https://www.iproperty.com.my/property/bungalow-taman-tun-dr-ismail-premium-7463177",
+		"title": "Jalan Aminuddin Baki, Ttdi, Kl, Taman Tun Dr Ismail",
+		"active": true,
+		"tier": 3,
+		"propertyType": "Bungalow",
+		"prices": [{
+			"type": "sale",
+			"currency": "MYR",
+			"max": 4000000,
+			"min": 4000000
+		}],
+		"cover": {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg"
+		},
+		"medias": [{
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/8926eeb29743496492d51ef24c390bba.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/8926eeb29743496492d51ef24c390bba.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/8926eeb29743496492d51ef24c390bba.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/9aa5d0bb3d83424289b5e44f811ec538.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/9aa5d0bb3d83424289b5e44f811ec538.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/9aa5d0bb3d83424289b5e44f811ec538.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/40aae7a99a8943c883f15c953e21a395.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/40aae7a99a8943c883f15c953e21a395.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/40aae7a99a8943c883f15c953e21a395.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b4665d142a164fa986311cdda4404274.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/b4665d142a164fa986311cdda4404274.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/b4665d142a164fa986311cdda4404274.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/15276b72132e4706a5c733045e1cdca3.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/15276b72132e4706a5c733045e1cdca3.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/15276b72132e4706a5c733045e1cdca3.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/efb7a17fe96948dd98cf72ab2bac0da9.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/efb7a17fe96948dd98cf72ab2bac0da9.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/efb7a17fe96948dd98cf72ab2bac0da9.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/6978d9763451437a86ecde48d565cec6.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/6978d9763451437a86ecde48d565cec6.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/6978d9763451437a86ecde48d565cec6.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/7db0e0299d574cc6a6fa98bde23c7900.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/7db0e0299d574cc6a6fa98bde23c7900.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/7db0e0299d574cc6a6fa98bde23c7900.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/20e7bb7369924d4092ccaa27eea13094.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/20e7bb7369924d4092ccaa27eea13094.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/20e7bb7369924d4092ccaa27eea13094.jpg"
+		}, {
+			"type": "image",
+			"url": "https://pictures-my.ippstatic.com/realtors/images/640/32434/085387396d4b42889a7aba598d591018.jpg",
+			"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/640/32434/085387396d4b42889a7aba598d591018.jpg",
+			"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/085387396d4b42889a7aba598d591018.jpg"
+		}],
+		"updatedAt": "2019-05-09T09:39:00.000Z",
+		"publishedAt": "2019-05-09T09:37:51+00:00",
+		"multilanguagePlace": {
+			"en-GB": {
+				"level1": "Kuala Lumpur",
+				"level2": "Taman Tun Dr Ismail"
+			}
+		},
+		"referenceCode": "UP7463177",
+		"attributes": {
+			"landArea": "7320",
+			"bathroom": "7",
+			"bedroom": "7+1",
+			"carPark": "6",
+			"builtUp": "6,032",
+			"landTitleType": "Residential",
+			"furnishing": "Partly Furnished",
+			"tenure": "Freehold",
+			"unitType": "Corner",
+			"sizeUnit": "SQUARE_FEET"
+		},
+		"listers": [{
+			"id": "32434",
+			"type": "agent",
+			"name": "Mac Chia",
+			"license": "REN 22940",
+			"image": {
+				"type": "image",
+				"thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/agent/4f61478e9ce84dd2820f985f3e6eac57.jpg",
+				"urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/agent/4f61478e9ce84dd2820f985f3e6eac57.jpg"
+			},
+			"website": "https://www.iproperty.com.my/realestateagent/32434/Mac_Chia",
+			"contact": {
+				"phones": [{
+					"label": "Mobile",
+					"number": "+60182886616"
+				}]
+			}
+		}],
+		"organisations": [{
+			"id": "1849",
+			"type": "agency",
+			"name": "KLCT International Realty Sdn. Bhd. (Sri Hartamas)",
+			"color": "#3cb6ab",
+			"logo": {
+				"type": "image",
+				"url": "https://images-my.ippstatic.com/images/searchresult/agencybrandlogo/24236cd0f5b44d368a86cb3ae7c653e2.png",
+				"thumbnailUrl": "https://images-my.ippstatic.com/images/searchresult/agencybrandlogo/24236cd0f5b44d368a86cb3ae7c653e2.png"
+			}
+		}]
+	}
+]

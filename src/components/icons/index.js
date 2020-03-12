@@ -1,4 +1,4 @@
-
+import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
@@ -10,11 +10,30 @@ SimpleLineIcons.loadFont();
 MaterialCommunityIcons.loadFont();
 EvilIcons.loadFont();
 
-export {
-  MaterialCommunityIcons,
-  EvilIcons,
-  SimpleLineIcons,
-  FontAwesome5,
-  AntDesign,
-  Ionicons,
+const Icons = (props) => {
+  const { name, iconName, style } = props;
+  let Icon = null;
+  switch (iconName) {
+    case "MaterialCommunityIcons":
+      Icon = MaterialCommunityIcons;
+      break;
+    case "EvilIcons":
+      Icon = EvilIcons;
+      break;
+    case "SimpleLineIcons":
+      Icon = SimpleLineIcons;
+      break;
+    case "FontAwesome5":
+      Icon = FontAwesome5;
+      break;
+    case "AntDesign":
+      Icon = AntDesign;
+      break;
+    case "Ionicons":
+      Icon = Ionicons;
+      break;
+  }
+  return <Icon name={name} style={style} />
 }
+
+export default Icons;

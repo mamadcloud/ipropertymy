@@ -14,8 +14,9 @@ import { useNavigation } from '@react-navigation/native';
 import { SCREENS } from '../navigations/constants';
 
 import Text from '../components/texts';
-import { MaterialCommunityIcons, FontAwesome5, AntDesign, SimpleLineIcons, Ionicons, } from '../components/icons';
+import Icons from '../components/icons';
 import { numberWithCommas } from '../libs/numberUtils';
+import searches from '../../sample_data/search-results-page';
 
 const { width, height } = Dimensions.get("window");
 const thumhnailHeight = width * .55;
@@ -28,126 +29,6 @@ const styles = {
     color: "#687786",
   }
 }
-const PROPERTIES = [
-  {
-    channels: [ "sale" ],
-    id: "sale-6820470",
-    title: "Arcoris Soho, Mont Kiara",
-    prices: [
-      {
-        type: "sale",
-        currency: "MYR",
-        max: 750000,
-        min: 750000
-      }
-    ],
-    propertyType: "Serviced Residence",
-		cover: {
-			type: "image",
-			url: "https://pictures-my.ippstatic.com/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg",
-			thumbnailUrl: "https://pictures-my.ippstatic.com/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg",
-			urlTemplate: "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/34543/8c42876c5d7f4a6aa067d1dcb5679849.jpg"
-    },
-    attributes: {
-			bathroom: "1",
-			bedroom: "1",
-			carPark: "1",
-			builtUp: "700",
-			landTitleType: "Residential",
-			tenure: "Freehold",
-			unitType: "SOHO",
-			sizeUnit: "SQUARE_FEET"
-    },
-    address: {
-			formattedAddress: "Jalan Kiara 4",
-			lat: 3.166783,
-			lng: 101.651499
-		},
-		multilanguagePlace: {
-			"en-GB": {
-				"level1": "Kuala Lumpur",
-				"level2": "Mont Kiara",
-				"level3": "Arcoris Soho"
-			}
-		},
-  },
-  {
-    channels: [ "sale" ],
-    id: "sale-6674935",
-    title: "Burhanuddin Helmi, Ttdi, Kl, Kuala Lumpur, Taman Tun Dr Ismail",
-    prices: [
-      {
-        type: "sale",
-        currency: "MYR",
-        max: 1030000,
-        min: 1030000
-      }
-    ],
-    propertyType: "1-sty Terrace/Link House",
-		cover: {
-			type: "image",
-			url: "https://pictures-my.ippstatic.com/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg",
-			thumbnailUrl: "https://pictures-my.ippstatic.com/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg",
-			urlTemplate: "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/b0d7210083a0495ea172e0684528363a.jpg"
-    },
-    attributes: {
-      landArea: "24x80",
-			bathroom: "2",
-			bedroom: "3",
-			carPark: "2",
-			builtUp: "1,500",
-      landTitleType: "Residential",
-      furnishing: "Partly Furnished",
-			tenure: "Freehold",
-			unitType: "Intermediate",
-			sizeUnit: "SQUARE_FEET"
-		},
-		"multilanguagePlace": {
-			"en-GB": {
-				"level1": "Kuala Lumpur",
-				"level2": "Taman Tun Dr Ismail"
-			}
-		},
-  },
-  {
-    channels: [ "sale" ],
-    id: "sale-7463177",
-    title: "Jalan Aminuddin Baki, Ttdi, Kl, Taman Tun Dr Ismail",
-    prices: [
-      {
-        type: "sale",
-        currency: "MYR",
-        max: 4000000,
-        min: 4000000
-      }
-    ],
-    propertyType: "Bungalow",
-		cover: {
-			type: "image",
-			url: "https://pictures-my.ippstatic.com/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg",
-			thumbnailUrl: "https://pictures-my.ippstatic.com/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg",
-			urlTemplate: "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/640/32434/a21c4dfde1be4321986b37734874e665.jpg"
-    },
-    attributes: {
-      landArea: "7320",
-			bathroom: "7",
-			bedroom: "7+1",
-			carPark: "6",
-			builtUp: "6,032",
-      landTitleType: "Residential",
-      furnishing: "Partly Furnished",
-			tenure: "Freehold",
-			unitType: "Corner",
-			sizeUnit: "SQUARE_FEET"
-    },
-    "multilanguagePlace": {
-			"en-GB": {
-				"level1": "Kuala Lumpur",
-				"level2": "Taman Tun Dr Ismail"
-			}
-		},
-  },
-]
 
 const convertSizeUnit = (sizeUnit) => {
   switch(sizeUnit) {
@@ -180,7 +61,7 @@ const SearchBox = ({ navigation }) => {
         }}
         onPress={() => navigation.goBack()}
       >
-        <SimpleLineIcons name={'arrow-left'} style={{ color: "#323232", fontSize: 20, }} />
+        <Icons iconName={"SimpleLineIcons"} name={'arrow-left'} style={{ color: "#323232", fontSize: 20, }} />
       </TouchableOpacity>
       <TouchableOpacity
         style={{
@@ -195,7 +76,7 @@ const SearchBox = ({ navigation }) => {
           flex: 1,
         }}
       >
-        <SimpleLineIcons name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
+        <Icons iconName={"SimpleLineIcons"} name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
         <Text
           style={[{ color: "#323232", paddingLeft: 5, fontWeight: "500", }]}
         >{'Arcoris Soho'}</Text>
@@ -224,7 +105,7 @@ const Filter = () => {
           flexDirection: "row",
         }}
       >
-        <Ionicons name={'md-switch'} style={{ color: "#323232", fontSize: 15, paddingRight: 10, }} />
+        <Icons iconName={"Ionicons"} name={'md-switch'} style={{ color: "#323232", fontSize: 15, paddingRight: 10, }} />
         <Text>{'FILTER'}</Text>
       </TouchableOpacity>
       <View style={{
@@ -240,14 +121,17 @@ const Filter = () => {
           flexDirection: "row",
         }}
       >
-        <AntDesign name={'menuunfold'} style={{ color: "#323232", fontSize: 13, paddingRight: 10, }} />
+        <Icons iconName={"AntDesign"} name={'menuunfold'} style={{ color: "#323232", fontSize: 13, paddingRight: 10, }} />
         <Text>{'SORT'}</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
+const DEFAULT_IMAGE = "https://via.placeholder.com/500x300";
 const ResultCard = ({ item, navigation, }) => {
+  const defaultUrl = (item.cover||{}).url || DEFAULT_IMAGE;
+  const [ url, setUrl ] = useState(defaultUrl);
   return (
     <View
       style={{
@@ -258,7 +142,11 @@ const ResultCard = ({ item, navigation, }) => {
         onPress={() => navigation.push(SCREENS.PROPERTY_DETAIL)}
       >
         <View>
-          <Image source={{ uri: item.cover.url, }} style={{ height: thumhnailHeight, }} />
+          <Image 
+            source={{ uri: url, }} 
+            style={{ height: thumhnailHeight, }} 
+            onError={() => setUrl(DEFAULT_IMAGE)}
+          />
           <View
             style={{
               backgroundColor: "#ffffff",
@@ -305,7 +193,7 @@ const ResultCard = ({ item, navigation, }) => {
                           borderRadius: 15,
                         }}
                       >
-                        <FontAwesome5 
+                        <Icons iconName={"FontAwesome5"}
                           name={i.icon} 
                           style={{ fontSize: 15, color: "#A5A5A5",   }} 
                         />
@@ -315,7 +203,7 @@ const ResultCard = ({ item, navigation, }) => {
                   ))
                 }
               </View>
-              <MaterialCommunityIcons name='star-outline' style={{ fontSize: 25, color: "#F6B042", }} />
+              <Icons iconName={"MaterialCommunityIcons"} name='star-outline' style={{ fontSize: 25, color: "#F6B042", }} />
             </View>
           </View>
         </View>
@@ -336,8 +224,8 @@ const Result = () => {
         <Filter />
         </>
       )}
-      renderItem={({ item }) => ResultCard({ item, navigation, }) }
-      data={PROPERTIES}
+      renderItem={({ item }) => <ResultCard item={item} navigation={navigation} /> }
+      data={searches.items}
     />
   );
 }

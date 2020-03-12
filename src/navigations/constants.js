@@ -3,6 +3,7 @@ export const SCREENS = {
   SAVED: "saved",
   SEARCH: "search",
   PROPERTY_DETAIL: "property_detail",
-  HOMESTACK: "home_stack",
+  HOME_STACK: "home_stack",
+  SAVED_STACK: "saved_stack",
   ME: "me",
 }

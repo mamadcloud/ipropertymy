@@ -7,11 +7,8 @@ import Text from '../components/texts';
 import { SCREENS } from './constants';
 
 import HomeStackNavigation from './homeStack';
-import SavedScreen from '../screens/Saved';
-import {
-  MaterialCommunityIcons,
-  EvilIcons,
-} from '../components/icons';
+import SavedStackNavigation from './savedStack';
+import Icons from '../components/icons';
 
 
 const Tabs = createBottomTabNavigator();
@@ -38,20 +35,20 @@ const HomeScreenNavigator = () => {
       }}
     >
       <Tabs.Screen 
-        name={SCREENS.HOMESTACK} 
+        name={SCREENS.HOME_STACK} 
         component={HomeStackNavigation} 
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <Icons iconName={"MaterialCommunityIcons"} name="home" style={{ fontSize: size, color: color }} />
           ),
         }}
       />
       <Tabs.Screen 
-        name={SCREENS.SAVED} 
-        component={SavedScreen} 
+        name={SCREENS.SAVED_STACK} 
+        component={SavedStackNavigation} 
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <MaterialCommunityIcons name={ focused ? "star" : "star-outline" } color={color} size={size} />
+            <Icons iconName={"MaterialCommunityIcons"} name={ focused ? "star" : "star-outline" }  style={{ fontSize: size, color: color }} />
           ),
         }}
       />
@@ -60,7 +57,7 @@ const HomeScreenNavigator = () => {
         component={MeScreen} 
         options={{
           tabBarIcon: ({ color, size }) => (
-            <EvilIcons name="user" color={color} size={30} />
+            <Icons iconName={"EvilIcons"} name="user"  style={{ fontSize: 30, color: color }} />
           ),
         }}
       />
