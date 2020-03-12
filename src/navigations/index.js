@@ -4,8 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { View, } from 'react-native';
 import Text from '../components/texts';
+import { SCREENS } from './constants';
 
-import HomeScreen from '../screens/Home';
+import HomeStackNavigation from './homeStack';
 import SavedScreen from '../screens/Saved';
 import {
   MaterialCommunityIcons,
@@ -37,8 +38,8 @@ const HomeScreenNavigator = () => {
       }}
     >
       <Tabs.Screen 
-        name={"Home"} 
-        component={HomeScreen} 
+        name={SCREENS.HOMESTACK} 
+        component={HomeStackNavigation} 
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -46,7 +47,7 @@ const HomeScreenNavigator = () => {
         }}
       />
       <Tabs.Screen 
-        name={"Saved"} 
+        name={SCREENS.SAVED} 
         component={SavedScreen} 
         options={{
           tabBarIcon: ({ focused, color, size }) => (
@@ -55,7 +56,7 @@ const HomeScreenNavigator = () => {
         }}
       />
       <Tabs.Screen 
-        name={"Me"} 
+        name={SCREENS.ME} 
         component={MeScreen} 
         options={{
           tabBarIcon: ({ color, size }) => (

@@ -9,8 +9,9 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useSafeArea } from 'react-native-safe-area-context';
+import { SCREENS } from '../navigations/constants';
 import { SimpleLineIcons } from '../components/icons';
 import Text from '../components/texts';
 
@@ -87,6 +88,7 @@ const LIFESTYLES = [
 const SearchBox = () => {
   const insets = useSafeArea();
   const [channel, setChannel] = useState(CHANNELS.SALE);
+  const navigation = useNavigation();
 
   return (
     <View
@@ -158,6 +160,7 @@ const SearchBox = () => {
               alignItems: "center",
               flexDirection: "row",
             }}
+            onPress={() => navigation.push(SCREENS.SEARCH)}
           >
             <SimpleLineIcons name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
             <Text

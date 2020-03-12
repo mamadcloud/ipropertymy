@@ -10,6 +10,7 @@ import {
 import { useFocusEffect } from '@react-navigation/native';
 import Text from '../components/texts';
 import { MaterialCommunityIcons, FontAwesome5, } from '../components/icons';
+import { numberWithCommas } from '../libs/numberUtils';
 
 const { width, height } = Dimensions.get("window");
 const thumbnailWidth = width * .3;
@@ -121,10 +122,6 @@ const SAVED_PROPERTIES = [
   },
 ]
 
-const numberWithCommas = (number) => {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 const ListingBox = ({ item, }) => {
   return (
     <View
@@ -175,10 +172,12 @@ const ListingBox = ({ item, }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   paddingRight: 10,
-                }}>
+                }}
+                key={i.label}
+                >
                   <View
                     style={{
-                      backgroundColor: "#efefef",
+                      backgroundColor: "#F2F2F2",
                       padding: 5,
                       marginRight: 5,
                       borderRadius: 15,
@@ -186,7 +185,7 @@ const ListingBox = ({ item, }) => {
                   >
                     <FontAwesome5 
                       name={i.icon} 
-                      style={{ fontSize: 15, color: "#A6A6A6",   }} 
+                      style={{ fontSize: 15, color: "#A5A5A5",   }} 
                     />
                   </View>
                   <Text>{item.attributes[i.label]}</Text>
