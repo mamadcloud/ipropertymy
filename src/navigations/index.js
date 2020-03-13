@@ -26,10 +26,10 @@ const HomeScreenNavigator = () => {
   return (
     <Tabs.Navigator
       tabBarOptions={{
-        activeTintColor: "#2B81C6",
-        inactiveTintColor: "#A6A6A6",
+        activeTintColor: '#2B81C6',
+        inactiveTintColor: '#A6A6A6',
         style: {
-          backgroundColor: "#ffffff",
+          backgroundColor: '#ffffff',
           paddingTop: 5,
         }
       }}
@@ -39,7 +39,7 @@ const HomeScreenNavigator = () => {
         component={HomeStackNavigation} 
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Icons iconName={"MaterialCommunityIcons"} name="home" style={{ fontSize: size, color: color }} />
+            <Icons iconName={'MaterialCommunityIcons'} name='home' style={{ fontSize: size, color: color }} />
           ),
         }}
       />
@@ -48,7 +48,7 @@ const HomeScreenNavigator = () => {
         component={SavedStackNavigation} 
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <Icons iconName={"MaterialCommunityIcons"} name={ focused ? "star" : "star-outline" }  style={{ fontSize: size, color: color }} />
+            <Icons iconName={'MaterialCommunityIcons'} name={ focused ? 'star' : 'star-outline' }  style={{ fontSize: size, color: color }} />
           ),
         }}
       />
@@ -57,7 +57,7 @@ const HomeScreenNavigator = () => {
         component={MeScreen} 
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Icons iconName={"EvilIcons"} name="user"  style={{ fontSize: 30, color: color }} />
+            <Icons iconName={'EvilIcons'} name='user'  style={{ fontSize: 30, color: color }} />
           ),
         }}
       />

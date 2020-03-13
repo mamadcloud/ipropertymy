@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   FlatList,
+  StyleSheet,
 } from 'react-native';
 import { useSafeArea } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -16,8 +17,40 @@ import Text from 'components/Text';
 import Icons from 'components/Icons';
 import { numberWithCommas } from 'libs/numberUtils';
 
-const { width, height } = Dimensions.get("window");
+const { width, height } = Dimensions.get('window');
 const thumhnailHeight = width * .60;
+
+const styles = StyleSheet.create({
+  headerWrapper: {
+    backgroundColor: '#ffffff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomColor: '#EBEBEB',
+    borderBottomWidth: 1,
+    height: 80,
+    paddingHorizontal: 10,
+  },
+  headerBackButtonWrapper: {
+    paddingVertical: 5,
+    marginVertical: 5,
+    flex: 1,
+  },
+  headerRightButton: {
+    paddingVertical: 5,
+    paddingLeft: 10,
+    marginVertical: 5,
+  },
+  headerIcon: {
+    color: '#323232'
+  },
+  sectionWrapper: {
+    backgroundColor: '#ffffff',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderBottomWidth: .3,
+    borderBottomColor: '#A6A6A6',    
+  }
+})
 
 const Header = () => {
   const navigation = useNavigation();
@@ -25,44 +58,23 @@ const Header = () => {
 
   return (
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingTop: insets.top,
-        flexDirection: "row",
-        alignItems: "center",
-        borderBottomColor: "#EBEBEB",
-        borderBottomWidth: 1,
-        height: 80,
-        paddingHorizontal: 10,
-      }}
+      style={[styles.headerWrapper, { paddingTop: insets.top, }]}
     > 
       <TouchableOpacity
-        style={{
-          paddingVertical: 5,
-          marginVertical: 5,
-          flex: 1,
-        }}
+        style={styles.headerBackButtonWrapper}
         onPress={() => navigation.goBack()}
       >
-        <Icons iconName={"SimpleLineIcons"} name={'arrow-left'} style={{ color: "#323232", fontSize: 20, }} />
+        <Icons iconName={'SimpleLineIcons'} name={'arrow-left'} style={[styles.headerIcon, { fontSize: 20, }]} />
       </TouchableOpacity>
       <TouchableOpacity
-        style={{
-          paddingVertical: 5,
-          paddingLeft: 10,
-          marginVertical: 5,
-        }}
+        style={styles.headerRightButton}
       >
-        <Icons iconName={"AntDesign"} name={'sharealt'} style={{ color: "#323232", fontSize: 25, }} />
+        <Icons iconName={'AntDesign'} name={'sharealt'} style={[styles.headerIcon, { fontSize: 25, }]} />
       </TouchableOpacity>
       <TouchableOpacity
-        style={{
-          paddingVertical: 5,
-          paddingLeft: 10,
-          marginVertical: 5,
-        }}
+        style={styles.headerRightButton}
       >
-        <Icons iconName={"MaterialCommunityIcons"} name={'star-outline'} style={{ color: "#323232", fontSize: 35, }} />
+        <Icons iconName={'MaterialCommunityIcons'} name={'star-outline'} style={[styles.headerIcon, { fontSize: 35, }]} />
       </TouchableOpacity>
     </View>
   );
@@ -70,15 +82,15 @@ const Header = () => {
 
 const convertSizeUnit = (sizeUnit) => {
   switch(sizeUnit) {
-    case "SQUARE_FEET":
-      return "sq. ft.";
+    case 'SQUARE_FEET':
+      return 'sq. ft.';
     default:
       return sizeUnit;
   }
 }
 
 const convertMonth = (month) => {
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   return months[month];
 }
 
@@ -114,8 +126,8 @@ const ImageCarousel = () => {
       />
       <View
         style={{
-          position: "absolute",
-          alignSelf: "flex-end",
+          position: 'absolute',
+          alignSelf: 'flex-end',
           bottom: 15,
           right: 15,
           paddingVertical: 5,
@@ -124,7 +136,7 @@ const ImageCarousel = () => {
           backgroundColor: 'rgba(0,0,0,.5)',
         }}
       >
-        <Text style={{ color: "#ffffff", fontWeight: "500", }}>{`${imageIndex}/${detail.medias.length}`}</Text>
+        <Text style={{ color: '#ffffff', fontWeight: '500', }}>{`${imageIndex}/${detail.medias.length}`}</Text>
       </View>
     </View>
   );
@@ -134,23 +146,16 @@ const Information = () => {
   const publishDate = new Date(detail.updatedAt);
   return (
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
-        marginBottom: 10,
-      }}
+      style={[styles.sectionWrapper, { marginBottom: 10, }]}
     >
-      <Text style={{ fontWeight: "500", fontSize: 20, paddingBottom: 10, }}>{`RM ${numberWithCommas(detail.prices[0].max)}`}</Text>
+      <Text style={{ fontWeight: '500', fontSize: 20, paddingBottom: 10, }}>{`RM ${numberWithCommas(detail.prices[0].max)}`}</Text>
       
       <View
         style={{
           paddingBottom: 10,
         }}
       >
-        <Text style={{ fontWeight: "500", }}>{detail.title}</Text>
+        <Text style={{ fontWeight: '500', }}>{detail.title}</Text>
         <Text>{detail.address.formattedAddress}</Text>
       </View>
 
@@ -165,36 +170,36 @@ const Information = () => {
       </View>
       <View
         style={{
-          flexDirection: "row",
+          flexDirection: 'row',
           flex: 1,
-          alignItems: "flex-end",
+          alignItems: 'flex-end',
           paddingBottom: 10,
         }}
       >
         {
-            [{ label: "bedroom", icon: "bed", }, { label: "bathroom", icon: "bath", }, { label: "carPark", icon: "car", }].map(i => (
+            [{ label: 'bedroom', icon: 'bed', }, { label: 'bathroom', icon: 'bath', }, { label: 'carPark', icon: 'car', }].map(i => (
               detail.attributes[i.label] && <View style={{
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
                 paddingRight: 10,
               }}
               key={i.label}
               >
                 <View
                   style={{
-                    backgroundColor: "#F2F2F2",
+                    backgroundColor: '#F2F2F2',
                     padding: 5,
                     marginRight: 5,
                     borderRadius: 15,
                   }}
                 >
-                  <Icons iconName={"FontAwesome5"}
+                  <Icons iconName={'FontAwesome5'}
                     name={i.icon} 
-                    style={{ fontSize: 10, color: "#A5A5A5",   }} 
+                    style={{ fontSize: 10, color: '#A5A5A5',   }} 
                   />
                 </View>
-                <Text style={{ fontWeight: "500", fontSize: 10, }}>{detail.attributes[i.label]}</Text>
+                <Text style={{ fontWeight: '500', fontSize: 10, }}>{detail.attributes[i.label]}</Text>
               </View>
             ))
           }
@@ -208,20 +213,15 @@ const MorgageCalculator = () => {
   const monthlyFee = (((detail.prices[0].max - (detail.prices[0].max/10)) * 1.045)/(35 * 12)).toFixed(0);
   return (
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
+      style={[styles.sectionWrapper, {
         marginBottom: 10,
-        flexDirection: "row",
-        alignItems: "center",
-      }}
+        flexDirection: 'row',
+        alignItems: 'center',
+      }]}
     >
-      <Icons iconName={"FontAwesome5"} name={"calculator"} style={{
+      <Icons iconName={'FontAwesome5'} name={'calculator'} style={{
         fontSize: 20,
-        color: "#A6A6A6",
+        color: '#A6A6A6',
         paddingRight: 15,
       }} />
       <View
@@ -230,9 +230,9 @@ const MorgageCalculator = () => {
         }}
       >
         <Text style={{ fontSize: 12, paddingBottom: 5, }}>{'Mortgage Calculator'}</Text>
-        <Text style={{ fontWeight: "500", }}>{`RM ${numberWithCommas(monthlyFee)} per month`}</Text>
+        <Text style={{ fontWeight: '500', }}>{`RM ${numberWithCommas(monthlyFee)} per month`}</Text>
       </View>
-      <Icons iconName={"SimpleLineIcons"} name={'arrow-right'} style={{ color: "#323232", fontSize: 20, }} />
+      <Icons iconName={'SimpleLineIcons'} name={'arrow-right'} style={{ color: '#323232', fontSize: 20, }} />
     </View>
   );
 }
@@ -240,16 +240,9 @@ const MorgageCalculator = () => {
 const MoreDetail = () => {
   return (
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
-        marginBottom: 10,
-      }}
+      style={[styles.sectionWrapper, { marginBottom: 10, }]}
     >
-      <Text style={{ fontWeight: "500", }}>{detail.title}</Text>
+      <Text style={{ fontWeight: '500', }}>{detail.title}</Text>
       <Text
         style={{
           maxHeight: 100,
@@ -264,8 +257,8 @@ const MoreDetail = () => {
       >
         <Text
           style={{
-            fontWeight: "500",
-            color: "#2B81C6",
+            fontWeight: '500',
+            color: '#2B81C6',
           }}
         >{'READ MORE'}</Text>
       </TouchableOpacity>
@@ -273,86 +266,55 @@ const MoreDetail = () => {
   )
 }
 
+const popertyInformation = [{
+  title: 'Land Title Type',
+  label: 'landTitleType',
+},{
+  title: 'Tenure',
+  label: 'tenure',
+},{
+  title: 'Furnishing',
+  label: 'furnishing',
+},{
+  title: 'Unit Type',
+  label: 'unitType',
+},{
+  title: 'Occupancy',
+  label: 'occupancy',
+},{
+  title: 'Title Type',
+  label: 'titleType',
+},]
+
 const PropertyInformation = () => {
   const { attributes } = detail;
   return (
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
-        marginBottom: 10,
-      }}
+    style={[styles.sectionWrapper, { marginBottom: 10, }]}
     >
-      <Text style={{ fontWeight: "500", }}>{"Property Information"}</Text>
+      <Text style={{ fontWeight: '500', }}>{'Property Information'}</Text>
       <View
         style={{
           paddingVertical: 10,
         }}
       >
-        <View
+        {popertyInformation.map((item) => (<View
+          key={item.label}
           style={{
-            flexDirection:"row",
+            flexDirection:'row',
             paddingVertical: 5,
           }}
         >
-          <Text style={{flex:1}}>{"Land Title Type"}</Text>
-          <Text style={{flex:1}}>{attributes.landTitleType || '-'}</Text>
-        </View>
-        <View
-          style={{
-            flexDirection:"row",
-            paddingVertical: 5,
-          }}
-        >
-          <Text style={{flex:1}}>{"Tenure"}</Text>
-          <Text style={{flex:1}}>{attributes.tenure || '-'}</Text>
-        </View>
-        <View
-          style={{
-            flexDirection:"row",
-            paddingVertical: 5,
-          }}
-        >
-          <Text style={{flex:1}}>{"Furnishing"}</Text>
-          <Text style={{flex:1}}>{attributes.furnishing || '-'}</Text>
-        </View>
-        <View
-          style={{
-            flexDirection:"row",
-            paddingVertical: 5,
-          }}
-        >
-          <Text style={{flex:1}}>{"Unit Type"}</Text>
-          <Text style={{flex:1}}>{attributes.unitType || '-'}</Text>
-        </View>
-        <View
-          style={{
-            flexDirection:"row",
-            paddingVertical: 5,
-          }}
-        >
-          <Text style={{flex:1}}>{"Occupancy"}</Text>
-          <Text style={{flex:1}}>{attributes.occupancy || '-'}</Text>
-        </View>
-        <View
-          style={{
-            flexDirection:"row",
-            paddingVertical: 5,
-          }}
-        >
-          <Text style={{flex:1}}>{"Title Type"}</Text>
-          <Text style={{flex:1}}>{attributes.titleType || '-'}</Text>
-        </View>
+          <Text style={{flex:1}}>{item.title}</Text>
+          <Text style={{flex:1}}>{attributes[item.label] || '-'}</Text>
+        </View>))}
       </View>
       <TouchableOpacity
       >
         <Text
           style={{
-            fontWeight: "500",
-            color: "#2B81C6",
+            fontWeight: '500',
+            color: '#2B81C6',
           }}
         >{'MORE DETAILS'}</Text>
       </TouchableOpacity>
@@ -366,42 +328,28 @@ const Lister = () => {
   return (
     <>
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingVertical: 5,
-        paddingHorizontal: 15,
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
-      }}
+      style={[styles.sectionWrapper, { paddingVertical: 5, }]}
     >
       <Text
         style={{
-          fontWeight: "500",
+          fontWeight: '500',
         }}
       >{organisation.name}</Text>
     </View>
     <View
-      style={{
-        backgroundColor: "#ffffff",
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
-        flexDirection: "row",
-        alignItems: "center",
-      }}
+      style={[styles.sectionWrapper, { flexDirection: 'row', alignItems: 'center', }]}
     >
-      {(lister.image||{}).thumbnailUrl && <Image source={{ uri: lister.image.thumbnailUrl }} style={{ width: 50, height: 50, borderRadius: 25, marginRight: 10, }} />}
+      {lister.image?.thumbnailUrl && <Image source={{ uri: lister.image.thumbnailUrl }} style={{ width: 50, height: 50, borderRadius: 25, marginRight: 10, }} />}
       <View
         style={{
           flex: 1,
         }}
       >
-        <Text style={{fontWeight: "500",}}>{lister.name}</Text>
+        <Text style={{fontWeight: '500',}}>{lister.name}</Text>
         <Text>{lister.license || '-'}</Text>
       </View>
-      <Icons iconName={"AntDesign"} name={"message1"} style={{ fontSize: 20, paddingHorizontal: 10, }} />
-      <Icons iconName={"SimpleLineIcons"} name={"phone"} style={{ fontSize: 20, paddingHorizontal: 10, }} />
+      <Icons iconName={'AntDesign'} name={'message1'} style={{ fontSize: 20, paddingHorizontal: 10, }} />
+      <Icons iconName={'SimpleLineIcons'} name={'phone'} style={{ fontSize: 20, paddingHorizontal: 10, }} />
     </View>
     </>
   );
@@ -410,56 +358,52 @@ const Lister = () => {
 const Contact = () => {
   return (
     <View
-      style={{
-        backgroundColor: "#ffffff",
+      style={[styles.sectionWrapper, {
         paddingVertical: 5,
-        paddingHorizontal: 15,
         borderTopWidth: .3,
-        borderTopColor: "#A6A6A6",
-        borderBottomWidth: .3,
-        borderBottomColor: "#A6A6A6",
-        flexDirection: "row",
-      }}
+        borderTopColor: '#A6A6A6',
+        flexDirection: 'row',
+      }]}
     >
       <TouchableWithoutFeedback>
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
           padding: 10,
-          backgroundColor: "#2B81C6",
+          backgroundColor: '#2B81C6',
           borderRadius: 5,
           borderWidth: 1,
-          borderColor: "#2B81C6",
+          borderColor: '#2B81C6',
           marginRight: 5,
         }}
       >
-        <Text style={{ color: "#ffffff", fontWeight:"500", }}>{'Contact'}</Text>
+        <Text style={{ color: '#ffffff', fontWeight:'500', }}>{'Contact'}</Text>
       </View>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback>
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
           padding: 10,
-          backgroundColor: "#EFEFEF",
+          backgroundColor: '#EFEFEF',
           borderRadius: 5,
           borderWidth: 1,
-          borderColor: "#687786",
+          borderColor: '#687786',
           marginLeft: 5,
         }}
       >
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
-          <Icons iconName={"FontAwesome5"} name={"whatsapp"} style={{ color:"#25d366", fontSize: 20, paddingRight: 10, }} />
+          <Icons iconName={'FontAwesome5'} name={'whatsapp'} style={{ color:'#25d366', fontSize: 20, paddingRight: 10, }} />
           <Text>{'Whatsapp'}</Text>
         </View>
       </View>

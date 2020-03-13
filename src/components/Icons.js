@@ -14,22 +14,22 @@ const Icons = (props) => {
   const { name, iconName, style } = props;
   let Icon = null;
   switch (iconName) {
-    case "MaterialCommunityIcons":
+    case 'MaterialCommunityIcons':
       Icon = MaterialCommunityIcons;
       break;
-    case "EvilIcons":
+    case 'EvilIcons':
       Icon = EvilIcons;
       break;
-    case "SimpleLineIcons":
+    case 'SimpleLineIcons':
       Icon = SimpleLineIcons;
       break;
-    case "FontAwesome5":
+    case 'FontAwesome5':
       Icon = FontAwesome5;
       break;
-    case "AntDesign":
+    case 'AntDesign':
       Icon = AntDesign;
       break;
-    case "Ionicons":
+    case 'Ionicons':
       Icon = Ionicons;
       break;
   }

@@ -6,9 +6,9 @@ import {
 
 const styles = StyleSheet.create({
   default:{
-    fontFamily: "Museo Sans",
+    fontFamily: 'Museo Sans',
     fontSize: 15,
-    fontWeight: "300"
+    fontWeight: '300'
   }
 })
 

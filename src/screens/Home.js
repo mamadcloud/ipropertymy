@@ -17,20 +17,20 @@ import Text from 'components/Text';
 
 import articles from 'sample-data/articles.json';
 
-const { width, height } = Dimensions.get("window");
+const { width, height } = Dimensions.get('window');
 
 const styles = {
   activeText: {
-    color: "#2B81C6",
+    color: '#2B81C6',
   },
   inactiveText: {
-    color: "#687786",
+    color: '#687786',
   }
 }
 
 const CHANNELS = {
-  SALE: "sale",
-  RENT: "rent"
+  SALE: 'sale',
+  RENT: 'rent'
 }
 
 const SearchBox = () => {
@@ -41,29 +41,29 @@ const SearchBox = () => {
   return (
     <View
       style={{
-        backgroundColor: "#2B81C6",
+        backgroundColor: '#2B81C6',
         paddingTop: insets.top,
       }}
     >
-      <Image source={require("assets/images/logo.png")} style={{
+      <Image source={require('assets/images/logo.png')} style={{
         paddingTop: 10,
         width: 180,
-        resizeMode: "contain",
-        alignSelf: "center",
+        resizeMode: 'contain',
+        alignSelf: 'center',
       }} />
       <View
         style={{
           marginHorizontal: 8,
-          backgroundColor: "#ffffff",
+          backgroundColor: '#ffffff',
           borderRadius: 5,
           marginVertical: 10,
         }}
       >
         <View
           style={{
-            flexDirection: "row",
+            flexDirection: 'row',
             borderBottomWidth: .3,
-            borderBottomColor: "#A6A6A6",
+            borderBottomColor: '#A6A6A6',
           }}
         >
           <TouchableWithoutFeedback
@@ -72,10 +72,10 @@ const SearchBox = () => {
             <View
               style={{
                 flex: 1,
-                alignItems: "center",
+                alignItems: 'center',
                 paddingVertical: 10,
                 borderBottomWidth: 1,
-                borderBottomColor: channel !== CHANNELS.SALE ? "#FFFFFF" : "#2B81C6",
+                borderBottomColor: channel !== CHANNELS.SALE ? '#FFFFFF' : '#2B81C6',
               }}
             >
               <Text
@@ -89,10 +89,10 @@ const SearchBox = () => {
             <View
               style={{
                 flex: 1,
-                alignItems: "center",
+                alignItems: 'center',
                 paddingVertical: 10,
                 borderBottomWidth: 1,
-                borderBottomColor: channel !== CHANNELS.RENT ? "#FFFFFF" : "#2B81C6",
+                borderBottomColor: channel !== CHANNELS.RENT ? '#FFFFFF' : '#2B81C6',
               }}
             >
               <Text
@@ -105,12 +105,12 @@ const SearchBox = () => {
           style={{
             paddingVertical: 15,
             paddingHorizontal: 10,
-            alignItems: "center",
-            flexDirection: "row",
+            alignItems: 'center',
+            flexDirection: 'row',
           }}
           onPress={() => navigation.push(SCREENS.SEARCH)}
         >
-          <Icons iconName={"SimpleLineIcons"} name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
+          <Icons iconName={'SimpleLineIcons'} name='magnifier' style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
           <Text
             style={[styles.inactiveText, { paddingLeft: 5, }]}
           >{'Search for properties'}</Text>
@@ -127,9 +127,9 @@ const firstBox = ({ section, item }) => (
       marginHorizontal: 10,
       marginBottom: 10,
       borderWidth: .3,
-      borderColor: "#A6A6A6",
+      borderColor: '#A6A6A6',
       borderRadius: 5,
-      backgroundColor: "#ffffff",
+      backgroundColor: '#ffffff',
     }}
   >
     <ImageBackground 
@@ -145,7 +145,7 @@ const firstBox = ({ section, item }) => (
     <Text
       style={[
         { 
-          fontWeight: "500",
+          fontWeight: '500',
           padding: 15, 
         }
       ]}
@@ -159,9 +159,9 @@ const carousel = ({ section, item, index, widthCarousel, heightCarousel, }) => (
     style={{
       marginHorizontal: 10,
       borderWidth: .3,
-      borderColor: "#A6A6A6",
+      borderColor: '#A6A6A6',
       borderRadius: 5,
-      backgroundColor: "#ffffff",
+      backgroundColor: '#ffffff',
       width: widthCarousel,
     }}
   >
@@ -177,7 +177,7 @@ const carousel = ({ section, item, index, widthCarousel, heightCarousel, }) => (
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
+        justifyContent: 'center',
         padding: 15,
       }}
     >
@@ -186,7 +186,7 @@ const carousel = ({ section, item, index, widthCarousel, heightCarousel, }) => (
         ellipsizeMode ={'tail'}
         style={[
           { 
-            fontWeight: "500", 
+            fontWeight: '500', 
           }
         ]}
       >{item.title}</Text>
@@ -211,17 +211,17 @@ const Articles = (props) => {
         style={{
           paddingHorizontal: 10,
           paddingBottom: 10,
-          flexDirection: "row",
+          flexDirection: 'row',
           flex: 1,
-          justifyContent:"space-between"
+          justifyContent:'space-between'
         }}
       >
         <Text
-          style={[{ fontWeight: "500", }]}
+          style={[{ fontWeight: '500', }]}
         >{section}</Text>
         <TouchableWithoutFeedback>
           <Text
-            style={[styles.activeText, { fontWeight: "500", }]}
+            style={[styles.activeText, { fontWeight: '500', }]}
           >{'MORE'}</Text>
         </TouchableWithoutFeedback>
       </View>
@@ -241,7 +241,7 @@ const Articles = (props) => {
 
 const HomeScreen = () => {
   useFocusEffect(() => {
-    StatusBar.setBarStyle("light-content")
+    StatusBar.setBarStyle('light-content')
   });
   return (
     <>
@@ -249,8 +249,8 @@ const HomeScreen = () => {
         showsVerticalScrollIndicator={false}
       >
         <SearchBox />
-        <Articles section={"News"} items={articles.news} />
-        <Articles section={"Lifestyles"} items={articles.lifestyles} />
+        <Articles section={'News'} items={articles.news} />
+        <Articles section={'Lifestyles'} items={articles.lifestyles} />
       </ScrollView>
     </>
   )
