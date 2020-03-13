@@ -84,6 +84,11 @@
 		"type": "agent",
 		"name": "Kira Chow",
 		"id": "34543",
+    "image": {
+      "type": "image",
+      "thumbnailUrl": "https://pictures-my.ippstatic.com/realtors/images/agent/4f61478e9ce84dd2820f985f3e6eac57.jpg",
+      "urlTemplate": "https://img.rea-asia.com/my-subsale/premium/${width}x${height}-${scale}/realtors/images/agent/4f61478e9ce84dd2820f985f3e6eac57.jpg"
+    },
 		"contact": {
 			"phones": [{
 				"label": "Mobile",

@@ -13,7 +13,7 @@ const HomeStackNavigation = () => {
   return (
     <Stack.Navigator
     headerMode={'none'}
-    initialRouteName={SCREENS.PROPERTY_DETAIL}
+    // initialRouteName={SCREENS.PROPERTY_DETAIL}
     >
       <Stack.Screen name={SCREENS.HOME} component={HomeScreen} />
       <Stack.Screen name={SCREENS.SEARCH} component={SearchScreen} />
