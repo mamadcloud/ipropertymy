@@ -11,10 +11,11 @@ import {
 } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useSafeArea } from 'react-native-safe-area-context';
-import { SCREENS } from '../navigations/constants';
-import Icons from '../components/icons';
-import Text from '../components/texts';
-import articles from '../../sample_data/articles.json';
+import { SCREENS } from 'navigations/constants';
+import Icons from 'components/Icons';
+import Text from 'components/Text';
+
+import articles from 'sample-data/articles.json';
 
 const { width, height } = Dimensions.get("window");
 
@@ -44,12 +45,12 @@ const SearchBox = () => {
         paddingTop: insets.top,
       }}
     >
-    <Image source={require("../../assets/images/logo.png")} style={{
-      paddingTop: 10,
-      width: 180,
-      resizeMode: "contain",
-      alignSelf: "center",
-    }} />
+      <Image source={require("assets/images/logo.png")} style={{
+        paddingTop: 10,
+        width: 180,
+        resizeMode: "contain",
+        alignSelf: "center",
+      }} />
       <View
         style={{
           marginHorizontal: 8,
@@ -100,106 +101,104 @@ const SearchBox = () => {
             </View>
           </TouchableWithoutFeedback>
         </View>
-          <TouchableOpacity
-            style={{
-              paddingVertical: 15,
-              paddingHorizontal: 10,
-              alignItems: "center",
-              flexDirection: "row",
-            }}
-            onPress={() => navigation.push(SCREENS.SEARCH)}
-          >
-            <Icons iconName={"SimpleLineIcons"} name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
-            <Text
-              style={[styles.inactiveText, { paddingLeft: 5, }]}
-            >{'Search for properties'}</Text>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            paddingVertical: 15,
+            paddingHorizontal: 10,
+            alignItems: "center",
+            flexDirection: "row",
+          }}
+          onPress={() => navigation.push(SCREENS.SEARCH)}
+        >
+          <Icons iconName={"SimpleLineIcons"} name="magnifier" style={[styles.inactiveText, { fontSize: 15, paddingHorizontal: 10, }]} />
+          <Text
+            style={[styles.inactiveText, { paddingLeft: 5, }]}
+          >{'Search for properties'}</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-const Articles = (props) => {
-  const { section, items } = props;
-  const firstBox = ({ item, index }) => (
-    <View 
-      key={`${section}-${index}`}
+const firstBox = ({ section, item }) => (
+  <View 
+    key={`${section}-${0}`}
+    style={{
+      marginHorizontal: 10,
+      marginBottom: 10,
+      borderWidth: .3,
+      borderColor: "#A6A6A6",
+      borderRadius: 5,
+      backgroundColor: "#ffffff",
+    }}
+  >
+    <ImageBackground 
+      source={{ uri: item.image}} 
       style={{
-        marginHorizontal: 10,
-        marginBottom: 10,
-        borderWidth: .3,
-        borderColor: "#A6A6A6",
-        borderRadius: 5,
-        backgroundColor: "#ffffff",
+        height: width * .4,
+        flex: 1,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5,
+        overflow: 'hidden',
+      }}
+    />
+    <Text
+      style={[
+        { 
+          fontWeight: "500",
+          padding: 15, 
+        }
+      ]}
+    >{item.title}</Text>
+  </View>
+);
+
+const carousel = ({ section, item, index, widthCarousel, heightCarousel, }) => (
+  <View 
+    key={`${section}-${index}`}
+    style={{
+      marginHorizontal: 10,
+      borderWidth: .3,
+      borderColor: "#A6A6A6",
+      borderRadius: 5,
+      backgroundColor: "#ffffff",
+      width: widthCarousel,
+    }}
+  >
+    <ImageBackground 
+      source={{ uri: item.image }} 
+      style={{
+        height: heightCarousel,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5,
+        overflow: 'hidden',
+      }}
+    />
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        padding: 15,
       }}
     >
-      <ImageBackground 
-        source={{ uri: item.image}} 
-        style={{
-          height: width * .4,
-          flex: 1,
-          borderTopLeftRadius: 5,
-          borderTopRightRadius: 5,
-          overflow: 'hidden',
-        }}
-      />
-      <View
-        style={{
-          padding: 15,
-        }}
-      >
-        <Text
-          style={[
-            { fontWeight: "500", }
-          ]}
-        >{item.title}</Text>
-      </View>
+      <Text
+        numberOfLines={3} 
+        ellipsizeMode ={'tail'}
+        style={[
+          { 
+            fontWeight: "500", 
+          }
+        ]}
+      >{item.title}</Text>
     </View>
-  );
+  </View>
+);
+
+const Articles = (props) => {
+  const { section, items } = props;
 
   const widthCarousel = width * (.60);
   const heightCarousel = widthCarousel * .4;
-  const carousel = ({ item, index }) => (
-    <View 
-      key={`${section}-${index}`}
-      style={{
-        marginHorizontal: 10,
-        borderWidth: .3,
-        borderColor: "#A6A6A6",
-        borderRadius: 5,
-        backgroundColor: "#ffffff",
-        width: widthCarousel,
-      }}
-    >
-      <ImageBackground 
-        source={{ uri: item.image }} 
-        style={{
-          height: heightCarousel,
-          borderTopLeftRadius: 5,
-          borderTopRightRadius: 5,
-          overflow: 'hidden',
-        }}
-      />
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          padding: 15,
-        }}
-      >
-        <Text
-          numberOfLines={3} 
-          ellipsizeMode ={'tail'}
-          style={[
-            { 
-              fontWeight: "500", 
-            }
-          ]}
-        >{item.title}</Text>
-      </View>
-    </View>
-  );
-
   const firstArticle = items.shift();
 
   return (
@@ -226,13 +225,13 @@ const Articles = (props) => {
           >{'MORE'}</Text>
         </TouchableWithoutFeedback>
       </View>
-      {firstBox({ item: firstArticle, index: 0 })}
+      {firstBox({ section, item: firstArticle, })}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
       >
       {items.map((item, index) => {
-        return carousel({ item, index });
+        return carousel({ section, item, index, widthCarousel, heightCarousel, });
       })}
       </ScrollView>
     </View>

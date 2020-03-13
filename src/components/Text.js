@@ -1,9 +1,16 @@
 import React from 'react';
 import {
-  Text as RNText
+  Text as RNText,
+  StyleSheet,
 } from 'react-native';
 
-import * as styles from './styles';
+const styles = StyleSheet.create({
+  default:{
+    fontFamily: "Museo Sans",
+    fontSize: 15,
+    fontWeight: "300"
+  }
+})
 
 const Text = (props) => {
   const { 
@@ -14,7 +21,7 @@ const Text = (props) => {
 
   return (
     <RNText 
-      style={[styles.font, style]}
+      style={[styles.default, style]}
       numberOfLines={numberOfLines}
       ellipsizeMode={ellipsizeMode}
     >

@@ -3,12 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { View, } from 'react-native';
-import Text from '../components/texts';
-import { SCREENS } from './constants';
+import Text from 'components/Text';
+import { SCREENS } from 'navigations/constants';
 
-import HomeStackNavigation from './homeStack';
-import SavedStackNavigation from './savedStack';
-import Icons from '../components/icons';
+import HomeStackNavigation from 'navigations/homeStack';
+import SavedStackNavigation from 'navigations/savedStack';
+import Icons from 'components/Icons';
 
 
 const Tabs = createBottomTabNavigator();

@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { SCREENS } from './constants';
 
-import HomeScreen from '../screens/Home';
-import SearchScreen from '../screens/Search';
-import PropertyDetailScreen from '../screens/PropertyDetail';
+import HomeScreen from 'screens/Home';
+import SearchScreen from 'screens/Search';
+import PropertyDetailScreen from 'screens/PropertyDetail';
 
 const Stack = createStackNavigator();
 

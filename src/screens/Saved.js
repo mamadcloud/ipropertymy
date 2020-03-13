@@ -9,11 +9,11 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import Text from '../components/texts';
-import Icons from '../components/icons';
-import { SCREENS } from '../navigations/constants';
-import { numberWithCommas } from '../libs/numberUtils';
-import propertySaved from '../../sample_data/property-saved';
+import Text from 'components/Text';
+import Icons from 'components/Icons';
+import { SCREENS } from 'navigations/constants';
+import { numberWithCommas } from 'libs/numberUtils';
+import propertySaved from 'sample-data/property-saved';
 
 const { width, height } = Dimensions.get("window");
 const thumbnailWidth = width * .3;

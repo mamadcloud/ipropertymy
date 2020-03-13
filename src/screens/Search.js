@@ -11,12 +11,12 @@ import {
 } from 'react-native';
 import { useSafeArea } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { SCREENS } from '../navigations/constants';
+import { SCREENS } from 'navigations/constants';
 
-import Text from '../components/texts';
-import Icons from '../components/icons';
-import { numberWithCommas } from '../libs/numberUtils';
-import searches from '../../sample_data/search-results-page';
+import Text from 'components/Text';
+import Icons from 'components/Icons';
+import { numberWithCommas } from 'libs/numberUtils';
+import searches from 'sample-data/search-results-page';
 
 const { width, height } = Dimensions.get("window");
 const thumhnailHeight = width * .55;

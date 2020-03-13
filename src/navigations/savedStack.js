@@ -3,8 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { SCREENS } from './constants';
 
-import SavedScreen from '../screens/Saved';
-import PropertyDetailScreen from '../screens/PropertyDetail';
+import SavedScreen from 'screens/Saved';
+import PropertyDetailScreen from 'screens/PropertyDetail';
 
 const Stack = createStackNavigator();
 

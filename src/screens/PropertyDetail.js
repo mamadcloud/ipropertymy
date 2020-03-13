@@ -11,10 +11,10 @@ import {
 import { useSafeArea } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
-import detail from '../../sample_data/property-details-page.json';
-import Text from '../components/texts';
-import Icons from '../components/icons';
-import { numberWithCommas } from '../libs/numberUtils';
+import detail from 'sample-data/property-details-page.json';
+import Text from 'components/Text';
+import Icons from 'components/Icons';
+import { numberWithCommas } from 'libs/numberUtils';
 
 const { width, height } = Dimensions.get("window");
 const thumhnailHeight = width * .60;
