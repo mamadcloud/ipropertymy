@@ -45,6 +45,12 @@ Follow this instruction to run the application
 More on [here](./docs)
 
 ## Fastlane
+Requirements
+1. Make sure install `firebase cli`
+2. Login to your account
+3. Make sure you have created the project and apps for both platform (iOS and Android)
+3. Go to respective platform folder in the project and change the App ID to your project ID.
+
 
 To upload to Firebase
 1. iOS
