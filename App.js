@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import MainNavigators from './src/navigations';
+import MainNavigators from 'navigations';
 
 const App = () => {
   return (

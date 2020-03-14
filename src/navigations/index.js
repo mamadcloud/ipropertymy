@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect, } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { View, } from 'react-native';
-import Text from 'components/Text';
-import { SCREENS } from 'navigations/constants';
+import AsyncStorage from '@react-native-community/async-storage';
 
-import HomeStackNavigation from 'navigations/homeStack';
-import SavedStackNavigation from 'navigations/savedStack';
 import Icons from 'components/Icons';
+import Text from 'components/Text';
+import ShortlistContext, { initShortlistContextValue } from 'contexts/ShortlistContext';
+import { SCREENS } from 'navigations/constants';
+import HomeStackNavigation from 'navigations/HomeStack';
+import SavedStackNavigation from 'navigations/SavedStack';
 
 
 const Tabs = createBottomTabNavigator();
@@ -66,12 +68,27 @@ const HomeScreenNavigator = () => {
 }
 
 const MainNavigators = () => {
+  // AsyncStorage.removeItem('shortlist')
+  const shortlistContextValue = initShortlistContextValue();
+
+  useEffect(() => {
+    AsyncStorage.getItem('shortlist')
+    .then(data => {
+      if (data && data !== JSON.stringify(shortlistContextValue.shortlist)) {
+        shortlistContextValue.load(JSON.parse(data));
+      }
+    });
+
+  }, []);
+
   return (
+    <ShortlistContext.Provider value={shortlistContextValue}>
     <SafeAreaProvider>
       <NavigationContainer>
         <HomeScreenNavigator />
       </NavigationContainer>
     </SafeAreaProvider>
+    </ShortlistContext.Provider>
   );
 }
 

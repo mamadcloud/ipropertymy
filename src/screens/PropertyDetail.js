@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -12,10 +12,11 @@ import {
 import { useSafeArea } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
-import detail from 'sample-data/property-details-page.json';
 import Text from 'components/Text';
 import Icons from 'components/Icons';
 import { numberWithCommas } from 'libs/numberUtils';
+
+import { ListingContext } from 'contexts';
 
 const { width, height } = Dimensions.get('window');
 const thumhnailHeight = width * .60;
@@ -100,7 +101,7 @@ const viewabilityConfig = {
   itemVisiblePercentThreshold: 50,
 };
 
-const ImageCarousel = () => {
+const ImageCarousel = ({ detail })  => {
   const [_, setIndex] = useState(imageIndex)
 
   return (
@@ -142,7 +143,7 @@ const ImageCarousel = () => {
   );
 }
 
-const Information = () => {
+const Information = ({ detail })  => {
   const publishDate = new Date(detail.updatedAt);
   return (
     <View
@@ -209,7 +210,7 @@ const Information = () => {
   );
 }
 
-const MorgageCalculator = () => {
+const MorgageCalculator = ({ detail })  => {
   const monthlyFee = (((detail.prices[0].max - (detail.prices[0].max/10)) * 1.045)/(35 * 12)).toFixed(0);
   return (
     <View
@@ -237,7 +238,7 @@ const MorgageCalculator = () => {
   );
 }
 
-const MoreDetail = () => {
+const MoreDetail = ({ detail }) => {
   return (
     <View
       style={[styles.sectionWrapper, { marginBottom: 10, }]}
@@ -286,7 +287,7 @@ const popertyInformation = [{
   label: 'titleType',
 },]
 
-const PropertyInformation = () => {
+const PropertyInformation = ({ detail })  => {
   const { attributes } = detail;
   return (
     <View
@@ -322,10 +323,11 @@ const PropertyInformation = () => {
   )
 }
 
-const Lister = () => {
-  const lister = detail.listers[0];
-  const organisation = detail.organisations[0];
-  return (
+const Lister = ({ detail })  => {
+  const lister = (detail.listers || [])[0];
+  const organisation = (detail.organisations || [])[0];
+
+  return !lister ? null : (
     <>
     <View
       style={[styles.sectionWrapper, { paddingVertical: 5, }]}
@@ -355,7 +357,7 @@ const Lister = () => {
   );
 }
 
-const Contact = () => {
+const Contact = ({ detail }) => {
   return (
     <View
       style={[styles.sectionWrapper, {
@@ -412,15 +414,16 @@ const Contact = () => {
   )
 }
 
-const Detail = () => {
+const Detail = ({ detail })  => {
+  const { listing } = useContext(ListingContext)
   return (
     <>
-      <ImageCarousel />
-      <Information />
-      <MorgageCalculator />
-      <MoreDetail />
-      <PropertyInformation />
-      <Lister />
+      <ImageCarousel detail={listing} />
+      <Information detail={listing} />
+      <MorgageCalculator detail={listing} />
+      <MoreDetail detail={listing} />
+      <PropertyInformation detail={listing} />
+      <Lister detail={listing} />
     </>
   );
 }

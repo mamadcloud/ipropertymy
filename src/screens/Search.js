@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {
   View,
   ScrollView,
@@ -15,8 +15,9 @@ import { SCREENS } from 'navigations/constants';
 
 import Text from 'components/Text';
 import Icons from 'components/Icons';
+import { ListingsContext, ListingContext, ShortlistContext, } from 'contexts';
 import { numberWithCommas } from 'libs/numberUtils';
-import searches from 'sample-data/search-results-page';
+import fetchGraphQL from 'libs/graphql';
 
 const { width, height } = Dimensions.get('window');
 const thumhnailHeight = width * .55;
@@ -129,9 +130,11 @@ const Filter = () => {
 }
 
 const DEFAULT_IMAGE = 'https://via.placeholder.com/500x300';
-const ResultCard = ({ item, navigation, }) => {
+const ResultCard = ({ item, navigation, shortlistContext, setListing, }) => {
   const defaultUrl = item.cover?.url || DEFAULT_IMAGE;
   const [ url, setUrl ] = useState(defaultUrl);
+
+  const shortlisted = shortlistContext.items && shortlistContext.items.map(x => x.id).indexOf(item.id) > -1;
   return (
     <View
       style={{
@@ -139,7 +142,10 @@ const ResultCard = ({ item, navigation, }) => {
       }}
     >
       <TouchableWithoutFeedback
-        onPress={() => navigation.push(SCREENS.PROPERTY_DETAIL)}
+        onPress={() => {
+          setListing(item);
+          navigation.push(SCREENS.PROPERTY_DETAIL);
+        }}
       >
         <View>
           <Image 
@@ -155,11 +161,11 @@ const ResultCard = ({ item, navigation, }) => {
           >
             <Text style={{ fontSize: 20, fontWeight: '500', }}>{`RM ${numberWithCommas(item.prices[0].max)}`}</Text>
             <Text numberOfLines={1} style={{ paddingTop: 10, fontSize: 18, fontWeight: '500', }}>{item.title}</Text>
-            {item.address?.formattedAddress && <Text numberOfLines={1}>{item.address?.formattedAddress}</Text>}
+            {!!item.address?.formattedAddress && <Text numberOfLines={1}>{item.address?.formattedAddress}</Text>}
             <Text style={{ paddingTop: 10, }}>{item.propertyType}</Text>
-            {item.attributes.builtUp && <Text style={{ }}>{`Built-up Size: ${item.attributes.builtUp} ${convertSizeUnit(item.attributes.sizeUnit)}`}</Text>}
-            {item.attributes.landArea && <Text style={{ }}>{`Land Area: ${item.attributes.landArea} ${convertSizeUnit(item.attributes.sizeUnit)}`}</Text>}
-            {item.attributes.furnishing && <Text style={{ }}>{`Furnishing: ${item.attributes.furnishing}`}</Text>}
+            {!!item.attributes.builtUp && <Text>{`Built-up Size: ${item.attributes.builtUp} `}</Text>}
+            {!!item.attributes.landArea && <Text>{`Land Area: ${item.attributes.landArea} ${convertSizeUnit(item.attributes.sizeUnit)}`}</Text>}
+            {!!item.attributes.furnishing && <Text>{`Furnishing: ${item.attributes.furnishing}`}</Text>}
             <View
               style={{
                 flexDirection: 'row',
@@ -203,7 +209,13 @@ const ResultCard = ({ item, navigation, }) => {
                   ))
                 }
               </View>
-              <Icons iconName={'MaterialCommunityIcons'} name='star-outline' style={{ fontSize: 25, color: '#F6B042', }} />
+              <TouchableOpacity
+                onPress={() => {
+                  shortlistContext.setShortlist(item);
+                }}
+              >
+                <Icons iconName={'MaterialCommunityIcons'} name={shortlisted ? 'star' : 'star-outline'} style={{ fontSize: 25, color: shortlisted ? '#F6B042' : '#687786', }} />
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -214,6 +226,10 @@ const ResultCard = ({ item, navigation, }) => {
 
 const Result = () => {
   const navigation = useNavigation();
+  const { listings } = useContext(ListingsContext);
+  const { setListing } = useContext(ListingContext);
+  const shortlistContext = useContext(ShortlistContext);
+  
   return (
     <FlatList
       ListHeaderComponent={() => (
@@ -224,13 +240,112 @@ const Result = () => {
         <Filter />
         </>
       )}
-      renderItem={({ item }) => <ResultCard item={item} navigation={navigation} /> }
-      data={searches.items}
+      renderItem={({ item }) => <ResultCard item={item} shortlistContext={shortlistContext} navigation={navigation} setListing={setListing} /> }
+      data={listings.items}
+      extraData={listings.items}
+      showsVerticalScrollIndicator={false}
     />
   );
 }
 
+const GQLQUERY = `query ($channels: [String!], $filters: ListingFilter, $pageToken: String) {
+  ascListings(channels:$channels, filters:$filters, pageToken:$pageToken) {
+    items {
+      id
+      kind
+      channels
+      title
+      propertyType
+      description
+      prices {
+        type
+        currency
+        max
+        min
+      }
+      cover {
+        type
+        url
+        thumbnailUrl
+        urlTemplate
+      }
+      medias {
+        type
+        url
+        thumbnailUrl
+        urlTemplate
+      }
+      updatedAt
+      publishedAt
+      address {
+        formattedAddress
+        lat
+        lng
+      }
+      attributes {
+        bathroom
+        bedroom
+        carPark
+        builtUp
+        landTitleType
+        tenure
+        unitType
+        sizeUnit
+      }
+      listers {
+        id
+        type
+        name
+        contact {
+          phones {
+            label
+            number
+          }
+        }
+        image {
+          type
+          thumbnailUrl
+          urlTemplate
+        }
+      }
+      organisations {
+        id
+        type
+        name
+        color
+        logo {
+          type
+          url
+          thumbnailUrl
+        }
+      }
+    }
+  }
+}`
+
 const SearchSearch = () => {
+  const { listings, setListings } = useContext(ListingsContext);
+
+  useEffect(() => {
+    fetchGraphQL({ query: GQLQUERY, variables: 
+      { 
+        filters: {
+          propertyTypes: [ 'AR' ],
+        },
+        channels: [ 'sale', 'new' ],
+        pageToken: 1,
+      }})
+      .then(json => {
+        if (JSON.stringify(listings) !== JSON.stringify(json.data.ascListings.items)) {
+          setListings({ items: json.data.ascListings.items });
+        }
+      });
+    
+    return () => {
+      setListings([]);
+    }
+  }, []);
+
   return (
     <>
       <StatusBar barStyle={'dark-content'} />
