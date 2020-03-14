@@ -43,3 +43,6 @@ Follow this instruction to run the application
 <img src="./docs/shortlist.png" alt="drawing" width="300"/>
 
 More on [here](./docs)
+
+## Fastlane
+Go to this branch [fastlane](https://github.com/mamadcloud/ipropertymy/tree/fastlane)
