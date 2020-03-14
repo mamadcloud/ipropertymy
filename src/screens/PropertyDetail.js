@@ -14,6 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import Text from 'components/Text';
 import Icons from 'components/Icons';
+import { BackButton } from 'components/buttons';
 import { numberWithCommas } from 'libs/numberUtils';
 
 import { ListingContext, ShortlistContext, } from 'contexts';
@@ -63,12 +64,7 @@ const Header = ({ detail, }) => {
     <View
       style={[styles.headerWrapper, { paddingTop: insets.top, }]}
     > 
-      <TouchableOpacity
-        style={styles.headerBackButtonWrapper}
-        onPress={() => navigation.goBack()}
-      >
-        <Icons iconName={'SimpleLineIcons'} name={'arrow-left'} style={[styles.headerIcon, { fontSize: 20, }]} />
-      </TouchableOpacity>
+      <BackButton style={styles.headerBackButtonWrapper} navigation={navigation} />
       <TouchableOpacity
         style={styles.headerRightButton}
       >
@@ -272,7 +268,7 @@ const MoreDetail = ({ detail }) => {
   )
 }
 
-const popertyInformation = [{
+const PROPERTY_INFORMATIONS = [{
   title: 'Land Title Type',
   label: 'landTitleType',
 },{
@@ -304,7 +300,7 @@ const PropertyInformation = ({ detail })  => {
           paddingVertical: 10,
         }}
       >
-        {popertyInformation.map((item) => (<View
+        {PROPERTY_INFORMATIONS.map((item) => (<View
           key={item.label}
           style={{
             flexDirection:'row',
