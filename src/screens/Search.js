@@ -335,6 +335,7 @@ const SearchSearch = () => {
   const { listings, setListings } = useContext(ListingsContext);
 
   useEffect(() => {
+    StatusBar.setBarStyle('dark-content')
     fetchGraphQL({ query: GQLQUERY, variables: 
       { 
         filters: {
