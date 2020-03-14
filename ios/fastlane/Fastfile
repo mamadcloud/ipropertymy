@@ -1,0 +1,34 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+    desc "Upload build to Firebase"
+    lane :firebase do
+      build_ios_app(
+        scheme: "ipropertymy",
+        export_options: {
+          method: "app-store"
+        }
+      )
+
+      firebase_app_distribution(
+          app: "1:322067818990:ios:dcaf7e908236dfb13246ff",
+          release_notes: "Assessment for Mobile Team iProperty MY",
+          firebase_cli_path: "/usr/local/bin/firebase"
+      )
+    end
+end

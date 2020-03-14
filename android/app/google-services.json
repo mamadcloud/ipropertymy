@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "322067818990",
+    "firebase_url": "https://ipropertymy-assessment.firebaseio.com",
+    "project_id": "ipropertymy-assessment",
+    "storage_bucket": "ipropertymy-assessment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322067818990:android:f0f46177e150368c3246ff",
+        "android_client_info": {
+          "package_name": "org.com.moh.ipropertymy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322067818990-1aqaarlqss5fefh6ol2vufumvvj3vl72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXCaM3Ds6qDkNUhiMK85d3j4EwbJmxp7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322067818990-1aqaarlqss5fefh6ol2vufumvvj3vl72.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "322067818990-colsj5ch1ehh3mc9ssluq997433u44q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.com.moh.ipropertymy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

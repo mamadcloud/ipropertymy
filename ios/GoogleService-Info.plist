@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>322067818990-colsj5ch1ehh3mc9ssluq997433u44q5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.322067818990-colsj5ch1ehh3mc9ssluq997433u44q5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDpLQvMcOlupkNYy-LBIeDiBoSBdXg0f8E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>322067818990</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.com.moh.ipropertymy</string>
+	<key>PROJECT_ID</key>
+	<string>ipropertymy-assessment</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ipropertymy-assessment.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:322067818990:ios:dcaf7e908236dfb13246ff</string>
+	<key>DATABASE_URL</key>
+	<string>https://ipropertymy-assessment.firebaseio.com</string>
+</dict>
+</plist>

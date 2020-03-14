@@ -16,6 +16,7 @@
 		1B807B932417F33C00022B63 /* museosans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B807B922417F33C00022B63 /* museosans-300.otf */; };
 		1B807B952417F38400022B63 /* museosans-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B807B942417F38400022B63 /* museosans-500.otf */; };
 		1B807B972417F38F00022B63 /* museosans-700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B807B962417F38F00022B63 /* museosans-700.otf */; };
+		1B807B9D241CE18400022B63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B807B9C241CE18400022B63 /* GoogleService-Info.plist */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -62,6 +63,7 @@
 		1B807B922417F33C00022B63 /* museosans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-300.otf"; sourceTree = "<group>"; };
 		1B807B942417F38400022B63 /* museosans-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-500.otf"; sourceTree = "<group>"; };
 		1B807B962417F38F00022B63 /* museosans-700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-700.otf"; sourceTree = "<group>"; };
+		1B807B9C241CE18400022B63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ipropertymy-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ipropertymy-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ipropertymy-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ipropertymy-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		398DDC3381E165ACC71910EE /* libPods-ipropertymy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ipropertymy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 		13B07FAE1A68108700A75B9A /* ipropertymy */ = {
 			isa = PBXGroup;
 			children = (
+				1B807B9C241CE18400022B63 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -312,6 +315,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 9GB36XQC5N;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -363,6 +369,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				1B807B932417F33C00022B63 /* museosans-300.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				1B807B9D241CE18400022B63 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 9GB36XQC5N;
 				INFOPLIST_FILE = ipropertymy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -708,7 +716,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.com.moh.ipropertymy;
 				PRODUCT_NAME = ipropertymy;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -720,6 +728,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9GB36XQC5N;
 				INFOPLIST_FILE = ipropertymy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -727,7 +736,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.com.moh.ipropertymy;
 				PRODUCT_NAME = ipropertymy;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

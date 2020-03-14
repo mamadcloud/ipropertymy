@@ -43,3 +43,14 @@ Follow this instruction to run the application
 <img src="./docs/shortlist.png" alt="drawing" width="300"/>
 
 More on [here](./docs)
+
+## Fastlane
+
+To upload to Firebase
+1. iOS
+- Make sure you are inside `ios` folder
+- Run `fastlane ios firebase`
+
+2. Android
+- Make sure you are inside `android` folder
+- Run `fastlane android firebase`
