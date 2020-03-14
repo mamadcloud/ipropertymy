@@ -24,3 +24,22 @@ Follow this instruction to run the application
 4. `cd ..`
 5. `npx react-native run-ios` to run iOS
 6. `npx react-native run-android` to run Android
+
+## Screenshots
+1. Home Page
+
+<img src="./docs/home.png" alt="drawing" width="300"/>
+
+2. Search Page
+
+<img src="./docs/search.png" alt="drawing" width="300"/>
+
+3. Detail Page
+
+<img src="./docs/detail.png" alt="drawing" width="300"/>
+
+4. Shortlisted Page
+
+<img src="./docs/shortlist.png" alt="drawing" width="300"/>
+
+More on [here](./docs)
