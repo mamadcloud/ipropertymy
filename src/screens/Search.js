@@ -16,6 +16,7 @@ import { SCREENS } from 'navigations/constants';
 
 import Text from 'components/Text';
 import Icons from 'components/Icons';
+import { BackButton } from 'components/buttons';
 import { ListingsContext, ListingContext, ShortlistContext, } from 'contexts';
 import { numberWithCommas } from 'libs/numberUtils';
 import fetchGraphQL from 'libs/graphql';
@@ -56,15 +57,12 @@ const SearchBox = ({ navigation }) => {
         height: 80,
       }}
     > 
-      <TouchableOpacity
+      <BackButton 
         style={{
           paddingVertical: 5,
           paddingLeft: 10,
-        }}
-        onPress={() => navigation.goBack()}
-      >
-        <Icons iconName={'SimpleLineIcons'} name={'arrow-left'} style={{ color: '#323232', fontSize: 20, }} />
-      </TouchableOpacity>
+        }} 
+        navigation={navigation}/>
       <TouchableOpacity
         style={{
           paddingVertical: 10,
