@@ -16,7 +16,7 @@ import Text from 'components/Text';
 import Icons from 'components/Icons';
 import { numberWithCommas } from 'libs/numberUtils';
 
-import { ListingContext } from 'contexts';
+import { ListingContext, ShortlistContext, } from 'contexts';
 
 const { width, height } = Dimensions.get('window');
 const thumhnailHeight = width * .60;
@@ -53,9 +53,11 @@ const styles = StyleSheet.create({
   }
 })
 
-const Header = () => {
+const Header = ({ detail, }) => {
   const navigation = useNavigation();
   const insets = useSafeArea();
+  const shortlistContext = useContext(ShortlistContext);
+  const shortlisted = shortlistContext.items && shortlistContext.items.map(x => x.id).indexOf(detail.id) > -1;
 
   return (
     <View
@@ -74,8 +76,11 @@ const Header = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.headerRightButton}
+        onPress={() => {
+          shortlistContext.setShortlist(detail);
+        }}
       >
-        <Icons iconName={'MaterialCommunityIcons'} name={'star-outline'} style={[styles.headerIcon, { fontSize: 35, }]} />
+        <Icons iconName={'MaterialCommunityIcons'} name={shortlisted ? 'star' : 'star-outline'} style={[styles.headerIcon, { fontSize: 35, color: shortlisted ? '#F6B042' : '#000000', }]} />
       </TouchableOpacity>
     </View>
   );
@@ -415,27 +420,27 @@ const Contact = ({ detail }) => {
 }
 
 const Detail = ({ detail })  => {
-  const { listing } = useContext(ListingContext)
   return (
     <>
-      <ImageCarousel detail={listing} />
-      <Information detail={listing} />
-      <MorgageCalculator detail={listing} />
-      <MoreDetail detail={listing} />
-      <PropertyInformation detail={listing} />
-      <Lister detail={listing} />
+      <ImageCarousel detail={detail} />
+      <Information detail={detail} />
+      <MorgageCalculator detail={detail} />
+      <MoreDetail detail={detail} />
+      <PropertyInformation detail={detail} />
+      <Lister detail={detail} />
     </>
   );
 }
 
 const PropertyDetailScreen = () => {
+  const { listing } = useContext(ListingContext);
   return (
     <>
       <ScrollView
         showsVerticalScrollIndicator={false}
       >
-        <Header />
-        <Detail />
+        <Header detail={listing} />
+        <Detail detail={listing} />
       </ScrollView>
       <Contact />
     </>

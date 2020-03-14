@@ -40,6 +40,7 @@ const HomeScreenNavigator = () => {
         name={SCREENS.HOME_STACK} 
         component={HomeStackNavigation} 
         options={{
+          title: 'Home',
           tabBarIcon: ({ color, size }) => (
             <Icons iconName={'MaterialCommunityIcons'} name='home' style={{ fontSize: size, color: color }} />
           ),
@@ -49,6 +50,7 @@ const HomeScreenNavigator = () => {
         name={SCREENS.SAVED_STACK} 
         component={SavedStackNavigation} 
         options={{
+          title: 'Saved',
           tabBarIcon: ({ focused, color, size }) => (
             <Icons iconName={'MaterialCommunityIcons'} name={ focused ? 'star' : 'star-outline' }  style={{ fontSize: size, color: color }} />
           ),
@@ -58,6 +60,7 @@ const HomeScreenNavigator = () => {
         name={SCREENS.ME} 
         component={MeScreen} 
         options={{
+          title: 'Me',
           tabBarIcon: ({ color, size }) => (
             <Icons iconName={'EvilIcons'} name='user'  style={{ fontSize: 30, color: color }} />
           ),

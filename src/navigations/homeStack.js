@@ -1,14 +1,14 @@
 import React, { useEffect, } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { SCREENS } from './constants';
+import ListingsContext, { initListingsContextValue, } from 'contexts/ListingsContext';
+import ListingContext, { initListingContextValue, } from 'contexts/ListingContext';
 
 import HomeScreen from 'screens/Home';
 import SearchScreen from 'screens/Search';
 import PropertyDetailScreen from 'screens/PropertyDetail';
 
-import ListingsContext, { initListingsContextValue, } from 'contexts/ListingsContext';
-import ListingContext, { initListingContextValue, } from 'contexts/ListingContext';
+import { SCREENS } from 'navigations/constants';
 
 const Stack = createStackNavigator();
 

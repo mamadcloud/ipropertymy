@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   Dimensions,
   FlatList,
+  ActivityIndicator,
 } from 'react-native';
 import { useSafeArea } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -244,6 +245,13 @@ const Result = () => {
       data={listings.items}
       extraData={listings.items}
       showsVerticalScrollIndicator={false}
+      contentContainerStyle={{
+        flexGrow: 1,
+      }}
+      ListEmptyComponent={() => (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
+          <ActivityIndicator />
+        </View>)}
     />
   );
 }

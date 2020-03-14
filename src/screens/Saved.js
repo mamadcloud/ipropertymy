@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, } from 'react';
 import {
   StatusBar,
   ScrollView,
@@ -15,6 +15,8 @@ import { SCREENS } from 'navigations/constants';
 import { numberWithCommas } from 'libs/numberUtils';
 import propertySaved from 'sample-data/property-saved';
 
+import { ListingContext, ShortlistContext, } from 'contexts';
+
 const { width, height } = Dimensions.get('window');
 const thumbnailWidth = width * .3;
 const thumhnailHeight = thumbnailWidth * .85;
@@ -28,10 +30,13 @@ const styles = {
   }
 }
 
-const ListingBox = ({ item, navigation, }) => {
+const ListingBox = ({ item, navigation, setListing, }) => {
   return (
     <TouchableWithoutFeedback
-      onPress={() => navigation.push(SCREENS.PROPERTY_DETAIL)}
+      onPress={() => {
+        setListing(item);
+        navigation.push(SCREENS.PROPERTY_DETAIL)
+      }}
     >
     <View
       style={{
@@ -115,6 +120,10 @@ const SavedScreen = () => {
     StatusBar.setBarStyle('dark-content')
   });
   const navigation = useNavigation();
+
+  const { setListing, } = useContext(ListingContext);
+  const shortlistContext = useContext(ShortlistContext);
+
   return (
     <>
       <View style={{
@@ -132,8 +141,23 @@ const SavedScreen = () => {
         style={{
           backgroundColor: '#ffffff',
         }}
-        data={propertySaved}
-        renderItem={({ item }) => ListingBox({ item, navigation, })}
+        data={shortlistContext.items}
+        renderItem={({ item }) => ListingBox({ item, navigation, setListing, })}
+        contentContainerStyle={{
+          flexGrow: 1,
+        }}
+        ListEmptyComponent={() => (
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingHorizontal: 10,
+            }}
+          >
+            <Text style={{ textAlign: 'center', }}>{'Start search.\nBookmark property that you like'}</Text>
+          </View>
+        )}
       />
     </>
   )
