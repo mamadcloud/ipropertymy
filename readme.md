@@ -24,3 +24,8 @@ Follow this instruction to run the application
 4. `cd ..`
 5. `npx react-native run-ios` to run iOS
 6. `npx react-native run-android` to run Android
+
+## Screenshots
+1. Home Page
+
+![](./docs/home.png =100x20)
