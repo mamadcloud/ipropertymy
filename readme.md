@@ -28,4 +28,18 @@ Follow this instruction to run the application
 ## Screenshots
 1. Home Page
 
-![](./docs/home.png =100x20)
+<img src="./docs/home.png" alt="drawing" width="300"/>
+
+2. Search Page
+
+<img src="./docs/search.png" alt="drawing" width="300"/>
+
+3. Detail Page
+
+<img src="./docs/detail.png" alt="drawing" width="300"/>
+
+4. Shortlisted Page
+
+<img src="./docs/shortlist.png" alt="drawing" width="300"/>
+
+More on [here](./docs)
